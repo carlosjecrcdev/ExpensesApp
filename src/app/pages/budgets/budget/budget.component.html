@@ -1,0 +1,36 @@
+<div class="mat-elevation-z2" style="width: 30%; padding: 30px; margin: 50px auto; display: flex;justify-content: center;">
+    <form [formGroup]="formBudget">
+        <div class="flex">
+            <mat-form-field >
+                <mat-label>Nombre</mat-label>
+                <input matInput placeholder="Nombre presupuesto" formControlName="name">
+            </mat-form-field>            
+        </div>
+        <div class="flex">
+            <mat-form-field >
+                <mat-label>Monto</mat-label>
+                <input matInput placeholder="Monto" formControlName="amount">
+            </mat-form-field>           
+        </div>
+        <div class="flex">
+            <mat-form-field>
+                <mat-label>Fecha de inicio</mat-label>
+                <input matInput [matDatepicker]="picker1" formControlName="startDate">
+                <mat-datepicker-toggle matSuffix [for]="picker1"></mat-datepicker-toggle>
+                <mat-datepicker #picker1></mat-datepicker>
+            </mat-form-field>                      
+        </div>
+        <div class="flex">
+            <mat-form-field>
+                <mat-label>Fecha de fin</mat-label>
+                <input matInput [matDatepicker]="picker2" formControlName="endDate">
+                <mat-datepicker-toggle matSuffix [for]="picker2"></mat-datepicker-toggle>
+                <mat-datepicker #picker2></mat-datepicker>
+            </mat-form-field>           
+        </div>
+        <div class="flex">
+            <button mat-flat-button color="primary" (click)="save()">Guardar</button>
+            <button mat-flat-button color="warn" (click)="back()" style="margin-left: 8px;">Volver</button>
+        </div>
+    </form>
+</div>
